@@ -2,11 +2,20 @@ const close = document.querySelector('.menu-closed');
 const open = document.querySelector('.menu-open');
 const navLinks = document.querySelector('.nav-links');
 const header = document.querySelector('.headerr')
+const navLink = document.querySelectorAll('.nav-link')
 
 open.addEventListener('click',function(e){
     navLinks.classList.add('translate')
     open.classList.add('close')
     close.classList.remove('close')
+})
+
+navLink.forEach((nav) => {
+    nav.addEventListener('click',function(e){
+        navLinks.classList.remove('translate')
+        close.classList.add('close')
+        open.classList.remove('close')  
+    })
 })
 
 close.addEventListener('click',function(e){
